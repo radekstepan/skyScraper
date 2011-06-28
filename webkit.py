@@ -80,4 +80,4 @@ if __name__ == '__main__':
         w.get(url)
 
     # output result
-    print w.html_result
+    print unicode(w.html_result).encode("utf-8")
