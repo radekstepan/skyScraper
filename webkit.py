@@ -47,6 +47,10 @@ class Webkit():
         self.qweb.setPage(self.Page())
         self.qweb.loadFinished.connect(self.finished_loading)
 
+        # timeout of 15s
+        self.timer = QTimer()
+        self.timer.singleShot(15000, self.finished_loading)
+
         if method == 'POST': self.qweb.load(req, operation=4, body=self.PostData(dict))
         else: self.qweb.load(req)
 
